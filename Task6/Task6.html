@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+
+    <script>
+      function onload() {
+        btn1 = document.getElementById("btn1");
+        btn1.addEventListener("click", function1);
+
+        btn2 = document.getElementById("btn2");
+        btn2.addEventListener("click", function2);
+
+        btn3 = document.getElementById("btn3");
+        btn3.addEventListener("click", function3);
+
+        btn4 = document.getElementById("btn4");
+        btn4.addEventListener("click", function4);
+
+        btn5 = document.getElementById("btn5");
+        btn5.addEventListener("click", function5);
+
+        function print(x) {
+          console.log(x);
+        }
+
+        function populateArray(arr) {
+          for (let i = 0; i <= 100; i++) {
+            arr.push(i);
+          }
+        }
+        function function1() {
+          let arr = [];
+          populateArray(arr);
+          arr = arr.filter(even);
+          arr.forEach((x) => print(x));
+          function even(x) {
+            return x % 3 != 0;
+          }
+        }
+
+        function function2() {
+          let arr = [];
+          populateArray(arr);
+          for (let i = 101; i <= 150; i++) {
+            arr.push(i);
+          }
+
+          arr.forEach((x) => print(x));
+        }
+
+        function function3() {
+          let arr = [];
+          populateArray(arr);
+
+          arr = arr.map((x) => addThree(x));
+          arr.forEach((x) => print(x));
+          function addThree(x) {
+            return x + 3;
+          }
+        }
+
+        function function4() {
+          let arr = [];
+          populateArray(arr);
+          for (let i = 20; i <= 40; i++) {
+            print(arr[i]);
+          }
+        }
+
+        function function5() {
+          let arr = [];
+          populateArray(arr);
+
+          shuffleArray(arr);
+          arr.forEach((x) => print(x));
+          function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+              let j = Math.floor(Math.random() * (i + 1));
+              [array[i], array[j]] = [array[j], array[i]];
+            }
+          }
+        }
+      }
+      window.addEventListener("load", onload);
+    </script>
+  </head>
+  <body>
+    <button id="btn1">Button 1</button><br />
+    <button id="btn2">Button 2</button><br />
+    <button id="btn3">Button 3</button><br />
+    <button id="btn4">Button 4</button><br />
+    <button id="btn5">Button 5</button><br />
+  </body>
+</html>
