@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+
+    <script>
+      function onload() {
+        btn = document.getElementById("btn");
+        btn.addEventListener("click", myFunction);
+
+        function myFunction() {
+          console.log("Hello World");
+        }
+      }
+      window.addEventListener("load", onload);
+    </script>
+  </head>
+  <body>
+    <button id="btn">Click me</button>
+  </body>
+</html>
